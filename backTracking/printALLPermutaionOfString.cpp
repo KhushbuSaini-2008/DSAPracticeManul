@@ -16,7 +16,7 @@ void printpermutation(string &s,int i){
    
 }
 int main(){
-    string s="abc";
+    string s="abcd";
     string ans="";
 printpermutation(s,0);
 
