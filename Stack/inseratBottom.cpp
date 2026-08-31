@@ -1,22 +1,23 @@
 #include<iostream>
 #include<stack>
 using namespace std;
-void printmiddle(stack<int>&s,int count){
+void insertatbottom(stack<int>&s,int value){
     if(s.empty()){
+        s.push(value);
         return ;
     }
-   int size=s.size();
-   int value=size/2;
-    if(count==value){
-       
-        cout<<s.top();
-        
-    }
+  
     int topelement=s.top();
     s.pop();
-    printmiddle(s,count+1);
+    insertatbottom(s,value);
     s.push(topelement);
 
+}
+void print(stack<int>&s){
+    while(!s.empty()){
+        cout<<s.top();
+        s.pop();
+    }
 }
 int main(){
     stack<int>s;
@@ -27,8 +28,8 @@ int main(){
     s.push(50);
     s.push(60);
     s.push(70);
-    printmiddle(s,-1);
-    cout<<s.size();
+   insertatbottom(s,80);
+   print(s);
 
     return 0;
 }
